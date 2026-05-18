@@ -37,19 +37,15 @@ The goal was to move beyond manual Excel tracking and build a full data pipeline
 ## 📁 Repository Structure
 
 ```
-XYZ-Foods-analysis/
+Food-Manufacturing-Unit-Sales-Analysis/
 │
-├── data/
-│   └── XYZ_Foods_sales_data.csv        # 2-year daily sales dataset (1,875 rows)
+├── XYZ_Foods_sales_data.csv        # 2-year daily sales dataset (1,875 rows)
 │
-├── python/
-│   └── XYZ Foods Analysis.ipynb        # Full EDA notebook (11 steps, 6 charts)
+├── XYZ Foods Analysis.ipynb        # Full EDA notebook (11 steps, 6 charts)
 │
-├── sql/
-│   └── XYZ_Foods_SQL_Analysis.sql      # 10 business questions + stored procedure
+├── XYZ_Foods_SQL_Analysis.sql      # 10 business questions + stored procedure
 │
-├── powerbi/
-│   └── XYZFoodsDashboard.pbix        # 4-page interactive Power BI dashboard
+├── XYZFoodsDashboard.pbix        # 4-page interactive Power BI dashboard
 │
 └── README.md
 ```
