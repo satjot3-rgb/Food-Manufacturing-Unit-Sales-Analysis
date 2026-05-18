@@ -165,8 +165,6 @@ The notebook covers 11 steps:
 
 **Dynamic slicers:** Year | Product | Quarter (synced across all pages)
 
-> 🔗 **Live Dashboard:** [Add your Power BI public link here]
-
 ---
 
 ## 💡 Key Insights
