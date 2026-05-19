@@ -79,7 +79,7 @@ Food-Manufacturing-Unit-Sales-Analysis/
 
 ## 🐍 Python Analysis (Google Colab)
 
-**File:** `python/XYZ_Foods_Analysis.ipynb`
+**File:** `XYZ_Foods_Analysis.ipynb`
 
 The notebook covers 11 steps:
 
@@ -114,7 +114,7 @@ The notebook covers 11 steps:
 
 ## 🗄️ SQL Analysis (MS SQL Server)
 
-**File:** `sql/XYZ_Foods_SQL_Analysis.sql`
+**File:** `XYZ_Foods_SQL_Analysis.sql`
 
 10 business questions answered with SQL:
 
@@ -142,7 +142,7 @@ The notebook covers 11 steps:
 
 ## 📈 Power BI Dashboard
 
-**File:** `powerbi/XYZ_Foods_Dashboard.pbix`
+**File:** 'XYZ_Foods_Dashboard.pbix'
 
 4-page interactive dashboard:
 
@@ -186,6 +186,6 @@ Aspiring Data & AI Analyst | 7 Years Running a Business, Now Solving It with Dat
 
 ## 📝 Notes
 
-- Dataset is based on real business operations with values adjusted for privacy
+- Dataset is based on business operations.
 - All monetary values are in Indian Rupees (₹)
 - Sundays are excluded from the dataset as the bakery was closed
