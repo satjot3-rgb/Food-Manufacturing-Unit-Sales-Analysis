@@ -227,7 +227,7 @@ ORDER BY Date;
 
 
 -- ============================================================
--- BONUS — STORED PROCEDURE
+-- STORED PROCEDURE
 -- Get full performance summary for any given month/year
 -- ============================================================
 
