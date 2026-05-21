@@ -130,7 +130,7 @@ The notebook covers 11 steps:
 | Q8 | Year on year revenue growth by product |
 | Q9 | Top 10 single best sales days |
 | Q10 | Rolling 30-day average revenue trend (window function) |
-| Bonus | Stored procedure: `GetMonthlyReport` for any month/year |
+| Q11 | Stored procedure: `GetMonthlyReport` for any month/year |
 
 **To run:**
 1. Open SQL Server Management Studio (SSMS)
