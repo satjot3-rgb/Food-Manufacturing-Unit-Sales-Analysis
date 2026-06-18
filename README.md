@@ -45,7 +45,8 @@ Food-Manufacturing-Unit-Sales-Analysis/
 │
 ├── XYZ_Foods_SQL_Analysis.sql      # 10 business questions + stored procedure
 │
-├── XYZFoodsDashboard.pbix        # 4-page interactive Power BI dashboard
+├── powerbi
+    └── XYZFoodsDashboard.pbix      # 4-page interactive Power BI dashboard
 │
 └── README.md
 ```
