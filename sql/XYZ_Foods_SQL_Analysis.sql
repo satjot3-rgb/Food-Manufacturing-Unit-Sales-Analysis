@@ -1,20 +1,11 @@
--- ============================================================
 --   XYZ Foods — SQL BUSINESS ANALYSIS
 --   Tool     : Microsoft SQL Server
 --   Author   : Satjot Singh Bhatia
---   Dataset  : 2 Years Daily Sales Data (2022-2023)
--- ============================================================
 
-
--- ============================================================
 -- STEP 1 — CREATE DATABASE & TABLE
--- ============================================================
 
 CREATE DATABASE XYZFoods;
-
 USE XYZFoods;
-
-
 CREATE TABLE SalesData (
     SaleID              INT IDENTITY(1,1) PRIMARY KEY,
     Date                DATE,
@@ -32,20 +23,7 @@ CREATE TABLE SalesData (
     Profit_Margin_Pct   DECIMAL(6,2)
 );
 
--- ============================================================
--- STEP 2 — IMPORT DATA
--- ============================================================
--- In SQL Server Management Studio (SSMS):
--- Right-click XYZFoods → Tasks → Import Flat File
--- Select XYZ_Foods_sales_data.csv
--- Map columns to the table above
--- ============================================================
-
-
--- ============================================================
--- STEP 3 — VERIFY DATA LOADED CORRECTLY
--- ============================================================
-
+-- STEP 2 — VERIFY DATA LOADED CORRECTLY
 SELECT TOP 10 * FROM SalesData;
 
 SELECT 
@@ -55,11 +33,7 @@ SELECT
     COUNT(DISTINCT Product) AS Products
 FROM SalesData;
 
-
--- ============================================================
--- BUSINESS QUESTION 1
--- What is the total revenue, profit and cost for each year?
--- ============================================================
+-- Total revenue, profit and cost for each year
 
 SELECT
     Year,
@@ -72,10 +46,7 @@ GROUP BY Year
 ORDER BY Year;
 
 
--- ============================================================
--- BUSINESS QUESTION 2
--- Which product generates the most revenue and profit?
--- ============================================================
+-- Product generates the most revenue and profit
 
 SELECT
     Product,
@@ -88,10 +59,7 @@ GROUP BY Product
 ORDER BY Total_Revenue_INR DESC;
 
 
--- ============================================================
--- BUSINESS QUESTION 3
--- What are the top 5 best performing months by revenue?
--- ============================================================
+-- Top 5 best performing months by revenue
 
 SELECT TOP 5
     Year,
@@ -103,10 +71,7 @@ GROUP BY Year, Month
 ORDER BY Monthly_Revenue DESC;
 
 
--- ============================================================
--- BUSINESS QUESTION 4
--- What are the 5 worst performing months by revenue?
--- ============================================================
+--  5 worst performing months by revenue
 
 SELECT TOP 5
     Year,
@@ -117,11 +82,7 @@ FROM SalesData
 GROUP BY Year, Month
 ORDER BY Monthly_Revenue ASC;
 
-
--- ============================================================
--- BUSINESS QUESTION 5
--- Which day of the week has the highest average revenue?
--- ============================================================
+-- Day of the week has the highest average revenue
 
 SELECT
     Day_of_Week,
@@ -133,10 +94,7 @@ GROUP BY Day_of_Week
 ORDER BY Avg_Daily_Revenue DESC;
 
 
--- ============================================================
--- BUSINESS QUESTION 6
--- What is the wastage rate per product and total cost of waste?
--- ============================================================
+-- Wastage rate per product and total cost of waste
 
 SELECT
     Product,
@@ -151,10 +109,7 @@ GROUP BY Product
 ORDER BY Wastage_Rate_Pct DESC;
 
 
--- ============================================================
--- BUSINESS QUESTION 7
--- How does revenue compare quarter by quarter?
--- ============================================================
+-- Revenue comparison quarter by quarter?
 
 SELECT
     Year,
@@ -167,10 +122,7 @@ GROUP BY Year, Quarter
 ORDER BY Year, Quarter;
 
 
--- ============================================================
--- BUSINESS QUESTION 8
 -- Year on year revenue growth by product
--- ============================================================
 
 SELECT
     Product,
@@ -186,10 +138,7 @@ GROUP BY Product
 ORDER BY YoY_Growth_Pct DESC;
 
 
--- ============================================================
--- BUSINESS QUESTION 9
--- What are the top 10 single best sales days overall?
--- ============================================================
+-- The top 10 single best sales days overall
 
 SELECT TOP 10
     Date,
@@ -203,10 +152,7 @@ GROUP BY Date, Day_of_Week, Month, Year
 ORDER BY Daily_Total_Revenue DESC;
 
 
--- ============================================================
--- BUSINESS QUESTION 10
 -- Rolling 30-day average revenue trend (window function)
--- ============================================================
 
 WITH DailyRevenue AS (
     SELECT
@@ -226,10 +172,7 @@ FROM DailyRevenue
 ORDER BY Date;
 
 
--- ============================================================
--- BONUS — STORED PROCEDURE
--- Get full performance summary for any given month/year
--- ============================================================
+-- Full performance summary for any given month/year
 
 CREATE PROCEDURE GetMonthlyReport
     @Month VARCHAR(20),
@@ -249,8 +192,5 @@ BEGIN
     GROUP BY Product
     ORDER BY Revenue_INR DESC;
 END;
-GO
 
--- Usage example:
 EXEC GetMonthlyReport @Month = 'January', @Year = 2022;
-GO
