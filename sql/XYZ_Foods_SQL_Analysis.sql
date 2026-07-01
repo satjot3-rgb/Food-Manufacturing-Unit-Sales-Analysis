@@ -23,7 +23,13 @@ CREATE TABLE SalesData (
     Profit_Margin_Pct   DECIMAL(6,2)
 );
 
--- STEP 2 — VERIFY DATA LOADED CORRECTLY
+-- STEP 2 — Import Data from CSV file
+-- In SQL Server Management Studio (SSMS):
+-- Right-click XYZFoods → Tasks → Import Flat File
+-- Select XYZ_Foods_sales_data.csv
+-- Map columns to the table above
+
+-- VERIFY DATA LOADED CORRECTLY
 SELECT TOP 10 * FROM SalesData;
 
 SELECT 
